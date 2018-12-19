@@ -11,5 +11,10 @@
     "url": "git+https://github.com/ChrisRiddell/U-ANT.git"
   },
   "author": "Chris Riddell",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "figlet": "^1.2.1",
+    "speedtest-net": "^1.4.3"
+  }
 }
