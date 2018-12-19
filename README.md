@@ -1,12 +1,5 @@
-# Unofficial AussieBB Network Tester (U-ANT)
-A light weight Powershell script to test latency and download speeds.
-
-### How to use
-- Computer running Windows 10
-- Download [U-ANT.zip](https://github.com/ChrisRiddell/U-ANT/releases)
-- Extract `U-ANT.zip`
-- Shift right click in the extracted folder and click `Open PowerShell window here`
-- Type `powershell -ExecutionPolicy ByPass -File uant.ps1`
+# U-ANT
+A light weight script to test latency and download speeds.
 
 ## License
 

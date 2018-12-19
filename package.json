@@ -1,0 +1,15 @@
+{
+  "name": "u-ant",
+  "version": "2.0.0",
+  "description": "A light weight script to test latency and download speeds.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisRiddell/U-ANT.git"
+  },
+  "author": "Chris Riddell",
+  "license": "MIT"
+}
