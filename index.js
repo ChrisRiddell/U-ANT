@@ -49,7 +49,7 @@ async function pingAddresses(urls) {
         // TODO: I need to add a catch to handle a failed ping
         const response = await ping.promise.probe(url, {
             timeout: 10,
-            min_reply: 10
+            min_reply: 25
         });
         return response;
     });
@@ -73,8 +73,8 @@ pingAddresses(['202.142.142.142', '180.150.17.170', '1.1.1.1', 'google.com.au'])
     spinner.stop();
 
     for (let index = 0; index < result.length; index++) {
-        console.log(chalk.blue(result[index].host))
-        console.log(chalk.green('  Minimum = ' + result[index].min + 'ms, Maximum = ' + result[index].max + 'ms, Average = ' + result[index].avg + 'ms \n'))
+        console.log(chalk.blue(' ' + result[index].host))
+        console.log(chalk.green('   Minimum = ' + result[index].min + 'ms, Maximum = ' + result[index].max + 'ms, Average = ' + result[index].avg + 'ms \n'))
     }
 
     Downloadspinner = spinnerMessage(' Testing Speed, Please be patient!',  [' __', ' --', ' **']);
@@ -85,10 +85,10 @@ pingAddresses(['202.142.142.142', '180.150.17.170', '1.1.1.1', 'google.com.au'])
     result.on('data', data => {
         Downloadspinner.stop();
 
-        console.log(chalk.blue('Speedtest'))
-        console.log(chalk.green('  Download = '+ data.speeds.download +'Mbps, Upload = '+ data.speeds.upload +'Mbps \n'))
+        console.log(chalk.blue(' Speedtest'))
+        console.log(chalk.green('   Download = '+ data.speeds.download +'Mbps, Upload = '+ data.speeds.upload +'Mbps \n'))
 
         var userName = readlineSync.question('Close [ENTER] ');
-        console.log('Finishing...');
+        console.log(' Finishing...');
     });
 });
