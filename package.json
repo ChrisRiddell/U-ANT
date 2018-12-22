@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "A light weight script to test latency and download speeds.",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +16,12 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "figlet": "^1.2.1",
+    "ora": "^3.0.0",
+    "ping": "^0.2.2",
+    "readline-sync": "^1.4.9",
     "speedtest-net": "^1.4.3"
+  },
+  "pkg": {
+    "assets": "node_modules/figlet/fonts/*"
   }
 }
