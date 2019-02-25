@@ -55,7 +55,7 @@ const loginMenu = [
     type: prev => {
       return axios({
         method: 'get',
-        url: 'https://uant-api.riddell.id.au/users',
+        url: 'http://localhost:8268/users',
         headers: { 'Content-Type': 'application/json', 'x-auth': prev }
       })
         .then(function () {
@@ -78,15 +78,14 @@ const loginMenu = [
   }
 ]
 
-async function runUANT () {
+async function runUANT() {
   const mainMenuItems = await prompt(mainMenu)
-
   if (mainMenuItems.options === 'register') {
     const registerMenuItems = await prompt(registerMenu)
     if (registerMenuItems.tos === true) {
       axios({
         method: 'post',
-        url: 'https://uant-api.riddell.id.au/users',
+        url: 'http://localhost:8268/users',
         headers: { 'Content-Type': 'application/json' },
         data: {
           email: registerMenuItems.email
@@ -109,7 +108,7 @@ async function runUANT () {
         case 'changePublicKey':
           axios({
             method: 'put',
-            url: 'https://uant-api.riddell.id.au/users/publickey',
+            url: 'http://localhost:8268/users/publickey',
             headers: { 'Content-Type': 'application/json', 'x-auth': loginMenuItems.password },
             data: { }
           })
@@ -125,7 +124,7 @@ async function runUANT () {
         case 'changePrivateKey':
           axios({
             method: 'put',
-            url: 'https://uant-api.riddell.id.au/users/privatekey',
+            url: 'http://localhost:8268/users/privatekey',
             headers: { 'Content-Type': 'application/json', 'x-auth': loginMenuItems.password },
             data: { }
           })
@@ -141,7 +140,7 @@ async function runUANT () {
         case 'showPublicKey':
           axios({
             method: 'get',
-            url: 'https://uant-api.riddell.id.au/users/publickey',
+            url: 'http://localhost:8268/users/publickey',
             headers: { 'Content-Type': 'application/json', 'x-auth': loginMenuItems.password },
             data: { }
           })
@@ -173,6 +172,7 @@ function displayBlock (colour, messages) {
     console.log(chalk[colour](m))
   }
   console.log(chalk[colour]('----------------------------------------------------------------------------'))
+  runUANT()
 }
 
 runUANT()
