@@ -14,12 +14,11 @@
   "author": "Chris Riddell",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "figlet": "^1.2.1",
-    "ora": "^3.0.0",
+    "ora": "^3.1.0",
     "ping": "^0.2.2",
-    "readline-sync": "^1.4.9",
-    "speedtest-net": "^1.4.3"
+    "speedtest-net": "^1.5.1"
   },
   "pkg": {
     "assets": "node_modules/figlet/fonts/*"
