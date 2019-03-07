@@ -1,0 +1,27 @@
+{
+  "name": "u-ant",
+  "version": "2.0.0",
+  "description": "A light weight node script to test latency and download speeds.",
+  "main": "src/uant.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisRiddell/U-ANT.git"
+  },
+  "author": "Chris Riddell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChrisRiddell/U-ANT/issues"
+  },
+  "homepage": "https://riddell.id.au/uant",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1",
+    "ora": "^3.2.0",
+    "ping": "^0.2.2",
+    "speedtest-net": "^1.5.1"
+  }
+}
