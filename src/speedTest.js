@@ -9,17 +9,29 @@ const chalk = require('chalk')
 const ora = require('ora')
 const speedTest = require('speedtest-net')
 
-exports.runTest = function() {
-    var test = speedTest({maxTime: 5000});
-    const spinner = ora('Loading unicorns').start();
-    
-    test.on('data', data => {
-      spinner.succeed();
-      console.dir(data);
-      
-    });
+// Speedtest server ID list
+const servers = ['2628', '5031', '20637', '2789']
 
-    return new Promise(function(resolve, reject) {
-        resolve()
+exports.runTest = async () => {
+
+    for (server in servers) {
+      const spinnerSpeed = ora(`Testing Speed to ${servers[server]}`).start()
+
+      let speedData = await speedService(String(servers[server]))
+
+      spinnerSpeed.succeed(chalk.greenBright(`Speed to ${speedData.server.sponsor} ${speedData.server.location}`))
+      console.log(chalk.blueBright(`    Download = ${Math.round(speedData.speeds.download)}Mbps, Upload = ${Math.round(speedData.speeds.upload)}Mbps`))
+    }
+
+  return new Promise(function (resolve, reject) {
+    resolve('Done')
+  })
+}
+
+const speedService = (id) => {
+  return new Promise(function (resolve, reject) {
+    require('speedtest-net')({maxTime: 25000, serverId: id}).on('data', data => {
+      resolve(data)
     })
+  })
 }

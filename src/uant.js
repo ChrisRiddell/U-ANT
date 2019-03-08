@@ -27,18 +27,12 @@ console.log(chalk.magentaBright(figlet.textSync('U-ANT', {
 })))
 
 // Subtitle for U-ANT
-console.log(chalk.yellowBright(' A light weight script to test latency and download speeds. \n'))
+console.log(chalk.yellowBright(' A light weight script to test latency and internet speeds. \n'))
 
 const app = async () => {
-  if (program.latency) {
-    const latencyArray = await latency.runTest()
-    for ( latencyA in latencyArray) {
-      console.log(latencyA)
-      console.log(chalk.greenBright(` ${latecys.host}`))
-      console.log(chalk.blueBright(`    Minimum = ${Math.round(latecys.min)}ms, Maximum = ${Math.round(latecys.max)}ms, Average = ${Math.round(latecys.avg)}ms`))
-    }
-  }
-  // if (program.speed) await speed.runTest()
+  if (program.latency) await latency.runTest()
+  console.log(``)
+  if (program.speed) await speed.runTest()
 }
 
 app()
