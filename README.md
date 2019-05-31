@@ -1,4 +1,4 @@
-# Unofficial AussieBB Network Tester (U-ANT)
+# Unofficial AussieBB Network Tester (U-ANT)(DISCONTINUED)
 A light weight Powershell script to test latency and download speeds.
 
 ### How to use
